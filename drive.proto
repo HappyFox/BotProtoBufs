@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+
+message DriveCmd {
+    sint32 heading = 2;
+    float throttle = 3;
+}
+
+message StopCmd {}
+
+message DriveFrame {
+    oneof cmd {
+        DriveCmd drive = 1;
+        StopCmd stop = 2;
+    }
+}
